@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>企業IDサイト</title>
+<style>
+body {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+font-family: Arial, sans-serif;
+}
+button {
+margin: 10px;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div>
+<label for="company-id">企業ID: </label>
+<span id="company-id">0001389882</span>
+</div>
+<div>
+<button onclick="copyID()">コピー</button>
+<button onclick="openLink()">開く</button>
+</div>
+
+<script>
+function copyID() {
+const id = document.getElementById("company-id").textContent;
+navigator.clipboard.writeText(id).then(() => {
+alert('ID copied!');
+});
+}
+
+function openLink() {
+window.open('https://trex-kintai.jp/0000806772/ktp');
+}
+</script>
+</body>
+</html>
